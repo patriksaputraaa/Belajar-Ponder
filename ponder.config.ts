@@ -1,20 +1,19 @@
 import { createConfig } from "ponder";
-
-import { ExampleContractAbi } from "./abis/ExampleContractAbi";
+import { Erc20Abi } from "./abis/erc20Abi";
 
 export default createConfig({
   chains: {
-    mainnet: {
-      id: 1,
-      rpc: process.env.PONDER_RPC_URL_1!,
+    arbitrum: {
+      id: 42161,
+      rpc: process.env.PONDER_RPC_URL_42161!,
     },
   },
   contracts: {
-    ExampleContract: {
-      chain: "mainnet",
-      abi: ExampleContractAbi,
-      address: "0x0000000000000000000000000000000000000000",
-      startBlock: 1234567,
+    ERC20: {
+      chain: "arbitrum",
+      abi: Erc20Abi,
+      address: "0xC99522da19b62ff5035355ACBe3Ebfef1F58Bc59",
+      startBlock: 342109081,
     },
   },
 });
